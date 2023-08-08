@@ -4,15 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="16dp">
 
-    <TextView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_one_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click a Button to start"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <Button
+            android:id="@+id/btn_all_posts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get All Posts"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btn_one_post"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_one_post"
+            app:layout_constraintEnd_toStartOf="@+id/btn_one_post"
+            app:layout_constraintTop_toBottomOf="@id/scrollView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_one_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="36dp"
+        android:text="Get One Post"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_all_posts" />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:inputType="number"
+        android:hint="Enter ID here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_all_posts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
